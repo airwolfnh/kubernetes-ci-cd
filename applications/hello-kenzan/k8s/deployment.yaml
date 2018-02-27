@@ -30,7 +30,7 @@ spec:
         tier: hello-kenzan
     spec:
       containers:
-      - image: airwolfnh/hello-kenzan:latest
+      - image: airwolfnh/hello-kenzan:${BUILD_ID}
         name: hello-kenzan
         ports:
         - containerPort: 80
