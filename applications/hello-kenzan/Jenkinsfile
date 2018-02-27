@@ -18,7 +18,10 @@ node {
         //sh "docker build -t ${imageName} airwolfnh/hello-kenzan"
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
     stage "Push"
-        sh "docker loging"
+    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
+        sh "docker login -u ${username} -p ${password}"
+}
+        
         sh "docker push ${imageName}"
 
     stage "Deploy"
