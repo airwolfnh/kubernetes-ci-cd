@@ -11,7 +11,7 @@ node {
     registryHost = "docker.io/airwolfnh/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
-    stage "Angelo test"
+    stage "Angelo test1"
         sh "echo 'Angelo test'"
     stage "Build"
     
